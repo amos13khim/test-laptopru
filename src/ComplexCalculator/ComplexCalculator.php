@@ -57,7 +57,7 @@ class ComplexCalculator extends Calculator
         $result1 = self::cMultiply($rNum1,$iNum1,$rNum2, self::multiply($iNum2, -1));
         $result2 = self::cMultiply($rNum2,$iNum2,$rNum2, self::multiply($iNum2, -1));
 
-        return '(' . $result1 . ') : ' . $result2;
+        return '(' . $result1 . '):' . $result2;
     }
 
     public static function cMultiply(int $rNum1, int $iNum1, int $rNum2, int $iNum2): string
@@ -75,7 +75,7 @@ class ComplexCalculator extends Calculator
             $iNum = self::multiply($iNum, -1);
         }
         return sprintf(
-            '%d %s %d'. 'i',
+            '%d%s%d'. 'i',
             $rNum,
             $sign,
             $iNum
@@ -93,7 +93,7 @@ class ComplexCalculator extends Calculator
         }
 
         return sprintf(
-            '%d %s %d'. 'i',
+            '%d%s%d'. 'i',
             $rNum,
             $sign,
             $iNum
@@ -112,7 +112,7 @@ class ComplexCalculator extends Calculator
         }
 
         return sprintf(
-            '%d %s %d'. 'i',
+            '%d%s%d'. 'i',
             $rNum,
             $sign,
             $iNum

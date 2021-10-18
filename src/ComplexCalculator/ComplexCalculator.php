@@ -67,54 +67,55 @@ class ComplexCalculator extends Calculator
         $num3 = self::multiply($iNum1, $rNum2);
         $num4 = self::multiply($iNum1, $iNum2);
         $num4 = self::multiply($num4, -1);
-        $sign = '+';
         $rNum = self::add($num1, $num4);
         $iNum = self::add($num2, $num3);
+
+        $operator = '+';
         if( $iNum < 0 ) {
-            $sign = '-';
+            $operator = '-';
             $iNum = self::multiply($iNum, -1);
         }
         return sprintf(
             '%d%s%d'. 'i',
             $rNum,
-            $sign,
+            $operator,
             $iNum
         );
     }
 
     public static function cAdd(int $rNum1, int $iNum1, int $rNum2, int $iNum2): string
     {
-        $sign = '+';
+        $operator = '+';
         $rNum = self::add($rNum1, $rNum2);
         $iNum = self::add($iNum1, $iNum2);
         if( $iNum < 0 ) {
-            $sign = '-';
+            $operator = '-';
             $iNum = self::multiply($iNum, -1);
         }
 
         return sprintf(
             '%d%s%d'. 'i',
             $rNum,
-            $sign,
+            $operator,
             $iNum
         );
     }
 
     public static function cSubtract(int $rNum1, int $iNum1, int $rNum2, int $iNum2): string
     {
-        $sign = '+';
+        $operator = '+';
         $rNum = self::subtract($rNum1, $rNum2);
         $iNum = self::subtract($iNum1, $iNum2);
 
         if( $iNum < 0 ) {
-            $sign = '-';
+            $operator = '-';
             $iNum = self::multiply($iNum, -1);
         }
 
         return sprintf(
             '%d%s%d'. 'i',
             $rNum,
-            $sign,
+            $operator,
             $iNum
         );
     }

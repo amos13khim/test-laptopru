@@ -20,14 +20,14 @@ if( $calculation_string ) {
     $parser->setStringToParse($calculation_string);
     try {
         $result = $parser->parseStringAsComplexArithmeticAction();
+
+        $calculator = new ComplexCalculator(...$result);
+        $calculator->setCalculationString($calculation_string);
+        $result = $calculator->calculate();
     } catch (Exception $e) {
         echo '<p style="color: white; background-color: red; padding:2px 5px;">' . $e->getMessage() . '</p>';
-        include __DIR__ . '/../templates/calculator-form.php';
-        return;
     }
 
-    $calculator = new ComplexCalculator(...$result);
-    $calculator->setCalculationString($calculation_string);
-    $result = $calculator->calculate();
+
 }
 include __DIR__ . '/../templates/calculator-form.php';

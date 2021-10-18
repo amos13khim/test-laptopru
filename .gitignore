@@ -1,5 +1,5 @@
 
 /vendor/
-/.idea/php-test-framework.xml
 /composer.lock
 /.phpunit.result.cache
+/.idea/
